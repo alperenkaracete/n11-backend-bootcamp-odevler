@@ -2,7 +2,7 @@ package n11bootcamp.odev1;
 
 import java.util.Scanner;
 
-public class odev2 {
+public class Main {
     public static void main(String[] args) {
 
         double tutar, kdvOrani, kdvTutari, kdvliTutar;
