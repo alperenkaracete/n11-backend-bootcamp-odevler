@@ -1,8 +1,8 @@
-package n11bootcamp.odev11;
+package n11bootcamp.odev1;
 
 import java.util.Scanner;
 
-public class EtkinlikOnerici {
+public class Main {
     public static void main(String[] args) {
         int sicaklik;
         Scanner input = new Scanner(System.in);
