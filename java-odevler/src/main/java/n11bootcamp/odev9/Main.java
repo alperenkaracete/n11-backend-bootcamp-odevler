@@ -1,4 +1,4 @@
-package n11bootcamp.odev11;
+package n11bootcamp.odev9;
 
 import java.util.Scanner;
 
