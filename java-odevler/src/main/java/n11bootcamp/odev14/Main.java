@@ -1,45 +1,35 @@
-package n11bootcamp.odev14;
+package n11bootcamp.odev16;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int km, yas, tip;
-        double birimFiyat = 0.10, toplamTutar, yasIndirimi = 0, tipIndirimi = 0;
+        int year;
+        boolean isLeapYear = false;
 
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Mesafeyi km türünden giriniz : ");
-        km = input.nextInt();
+        System.out.print("Yıl Giriniz : ");
+        year = input.nextInt();
 
-        System.out.print("Yaşınızı giriniz : ");
-        yas = input.nextInt();
-
-        System.out.print("Yolculuk tipini giriniz (1 => Tek Yön , 2 => Gidiş Dönüş ): ");
-        tip = input.nextInt();
-
-        if (km > 0 && yas > 0 && (tip == 1 || tip == 2)) {
-            toplamTutar = km * birimFiyat;
-
-            if (yas < 12) {
-                yasIndirimi = toplamTutar * 0.50;
-            } else if (yas <= 24) {
-                yasIndirimi = toplamTutar * 0.10;
-            } else if (yas >= 65) {
-                yasIndirimi = toplamTutar * 0.30;
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0) {
+                    isLeapYear = true;
+                } else {
+                    isLeapYear = false;
+                }
+            } else {
+                isLeapYear = true;
             }
-
-            toplamTutar -= yasIndirimi;
-
-            if (tip == 2) {
-                tipIndirimi = toplamTutar * 0.20;
-                toplamTutar = (toplamTutar - tipIndirimi) * 2;
-            }
-
-            System.out.println("Toplam Tutar = " + toplamTutar + " TL");
-
         } else {
-            System.out.println("Hatalı Veri Girdiniz !");
+            isLeapYear = false;
+        }
+
+        if (isLeapYear) {
+            System.out.println(year + " bir artık yıldır !");
+        } else {
+            System.out.println(year + " bir artık yıl değildir !");
         }
 
         input.close();
